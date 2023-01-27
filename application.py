@@ -39,7 +39,7 @@ def add_income():
         )
     )
     print(prediction)
-    response = jsonify(result=str(np.round(prediction[0], 2)))
+    response = jsonify(generate_price_range(np.round(prediction[0], 2)))
     # Enable Access-Control-Allow-Origin
     response.headers.add("Access-Control-Allow-Origin", "*")
 
@@ -85,7 +85,7 @@ def predict():
     )
     # print(prediction)
 
-    return jsonify(generate_price_range(np.round(prediction[0], 2)))  # return json
+    return str(np.round(prediction[0], 2)) # return json
     # return str(1)
 
 
