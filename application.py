@@ -4,7 +4,7 @@ import pickle
 import pandas as pd
 import numpy as np
 
-
+import os
 def generate_price_range(predicted_price) -> dict:
 
     if predicted_price < 1000000:
@@ -89,5 +89,5 @@ def predict():
     # return str(1)
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
